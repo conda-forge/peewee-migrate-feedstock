@@ -1,5 +1,5 @@
 {% set name = "peewee-migrate" %}
-{% set version = "1.14.1" %}
+{% set version = "1.14.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/peewee_migrate-{{ version }}.tar.gz
-  sha256: 7d45fe95176a7c61eee05fdbc222c039d08816b432f149eb867e9956dd53d64d
+  sha256: df7979303c7034f0e51ca7c83044462c33309c8fd217080847aea78291d25014
 
 build:
   entry_points:
@@ -24,8 +24,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0
-    - peewee >=3.0.0,<4.0.0
-    - click
+    - peewee <4,>=3
+    - click 
 
 test:
   imports:
