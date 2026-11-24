@@ -1,13 +1,13 @@
 {% set name = "peewee-migrate" %}
-{% set version = "1.15.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/peewee_migrate-{{ version }}.tar.gz
-  sha256: 0fd9fbc5cb2e6749d88b38c48c4ca24fb4a25368751b9c7a76cc1c78c767cf83
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/peewee_migrate-{{ version }}.tar.gz
+  sha256: aeefae38c24260bfb3497c69e88e0b8139141a8d9d0533f8bab27b07ddb0f246
 
 build:
   entry_points:
@@ -24,7 +24,7 @@ requirements:
     - uv-build >=0.10.2,<0.11.0
   run:
     - python >={{ python_min }},<4.0
-    - peewee
+    - peewee >=4.4
     - click
 
 test:
